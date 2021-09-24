@@ -1,20 +1,13 @@
-const object = {
-	health: 5,
-	name: 'Bob Ross',
-	get: function(obj, property){
-		return 'boobs';
-	}
-};
+function* generator(){
+	let myArray = [1, 2, 3];
+	yield myArray[0];
+	yield myArray[1];
+	yield myArray[2];
+}
 
-console.log(object.get());
+let myIterator = generator();
 
-Object.defineProperty(object, 'speed', {
-	value: 8,
-	writtable: false
-});
-
-console.log(object.speed);
-
-object.speed = 10;
-
-console.log(object.speed);
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
