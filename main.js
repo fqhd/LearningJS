@@ -1,13 +1,18 @@
-function* generator(value){
-	let myArray = [1, 2, 3];
-	yield value;
-	yield myArray[0];
-	yield myArray[1];
-	yield myArray[2];
+function* generator(){
+	while(true){
+		yield { name: 'Josh', age: Math.random(3, 3) };
+	}
 }
 
-let myIterator = generator('ooga booga');
+let myIterator = generator();
 
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
 console.log(myIterator.next());
 console.log(myIterator.next());
 console.log(myIterator.next());
