@@ -1,6 +1,9 @@
-let maxInteger = Number.MAX_SAFE_INTEGER;
-maxInteger = 24023523242394872039875093875249879487598723095823565086723528n;
-for(let i = 0; i < 10; i++){
-	maxInteger *= maxInteger;
+let calcAverage = (...numbers) => {
+	let sum = 0;
+	for(let i = 0; i < numbers.length; i++){
+		sum += numbers[i];
+	}
+	return sum/numbers.length;
 }
-console.log(maxInteger);
+
+console.log(calcAverage(1, 2, 3, 4, 5, 6));
