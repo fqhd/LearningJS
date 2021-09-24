@@ -1,15 +1,8 @@
-class Cat {
-	meow(){
-		console.log('Meow');
-	}
-	eat(food){
-		with(food){
-			console.log('I just ate ' + type);
-		}
-	}
-}
+let mybigNumber = 100003390348230900009237982389570980938039809283049283432987293;
+let mybigInt = 100003390348230900009237982389570980938039809283049283432987293n;
 
-let ourCat = new Cat();
+console.log('mybigNumber is of type: ' + typeof(mybigNumber));
+console.log('mybigInt is of type: ' + typeof(mybigInt));
 
-ourCat.meow();
-ourCat.eat({ type: 'Tuna' });
+console.log(mybigNumber);
+console.log(mybigInt);
