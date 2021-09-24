@@ -1,4 +1,20 @@
-let bigNumber = Number.MAX_SAFE_INTEGER;
-console.log('My Number: ' + bigNumber);
-bigNumber += 100000000000000000000000000093849352032903850200010000000000000000000000000009384935203290;
-console.log('My Number: ' + bigNumber);
+const object = {
+	health: 5,
+	name: 'Bob Ross',
+	get: function(obj, property){
+		return 'boobs';
+	}
+};
+
+console.log(object.get());
+
+Object.defineProperty(object, 'speed', {
+	value: 8,
+	writtable: false
+});
+
+console.log(object.speed);
+
+object.speed = 10;
+
+console.log(object.speed);
