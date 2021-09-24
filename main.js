@@ -1,18 +1,14 @@
-'use strict';
+const person = {
+	name: 'John',
+	age: 22
+};
 
-const parents = ['mary', 'sam'];
-const children = ['stale', 'john', 'robert'];
-const family = parents.concat(children);
+const handler = {
+	get: function(target, property, receiving){
+		return 'world';
+	}
+};
 
-let sum = () => {
-	return 9;
-}
+const proxy = new Proxy(person, handler);
 
-let concat = () => {
-	return [].concat(parents, children);
-}
-
-(() => {
-	console.log(sum());
-	console.log(concat());
-})();
+console.log(proxy.age);
