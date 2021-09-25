@@ -1,22 +1,13 @@
-function sum(){
-	let a = 0;
-	function increaseSum(){
-		return a++;
-	}
-	return increaseSum;
-}
+const myObject = {
+	size: 5
+};
 
-let incrementingFunction = sum();
-console.log(incrementingFunction());
-console.log(incrementingFunction());
-console.log(incrementingFunction());
-console.log(incrementingFunction());
-console.log(incrementingFunction());
-console.log(incrementingFunction());
-let anotherIncrementingFunction = sum();
-console.log(anotherIncrementingFunction());
-console.log(anotherIncrementingFunction());
-console.log(anotherIncrementingFunction());
-console.log(anotherIncrementingFunction());
-console.log(anotherIncrementingFunction());
-console.log(incrementingFunction());
+console.log(myObject.size);
+
+Object.defineProperty(myObject, 'iterator', {
+	get() {
+		return 'boobs';
+	}
+});
+
+console.log(myObject.iterator);
