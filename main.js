@@ -3,7 +3,7 @@ let greet = () => {
 		console.log('Jaden');
 	}
 
-	displayName();
+	return displayName;
 }
 
-greet();
+greet()();
