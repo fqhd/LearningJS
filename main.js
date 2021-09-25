@@ -1,13 +1,9 @@
-const myArray = [1, 2, 3, 4];
-let arrayIterator = myArray[Symbol.iterator]();
 
-const myObject = {
-	jump: function(){
-		console.log('Other object is jumping');
-	}
+let myFunction;
+
+myFunction = function(){
+	console.log('This is my function');
+	console.log('And this function took ' + arguments.length + ' arguments');
 }
 
-myObject.jump();
-myObject['jump']();
-
-console.log(typeof(Symbol.iterator));
+myFunction(3, 4, 5, 5);
