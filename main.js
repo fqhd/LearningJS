@@ -1,9 +1,17 @@
+const myObject = {
+	age: 32,
+	myFunction: function() {
+		console.log(this);
+	},
+	hit: () => {
+		console.log(this); // This will not work because this doesn't exist inside arrow functions
+	}
+};
 
-let myFunction;
+myObject.hit.bind(myObject);// This will not work because hit is an arrow function
 
-myFunction = function(){
-	console.log('This is my function');
-	console.log('And this function took ' + arguments.length + ' arguments');
+function testFunction(){
+	myObject.myFunction();
+	myObject.hit();
 }
-
-myFunction(3, 4, 5, 5);
+testFunction();
