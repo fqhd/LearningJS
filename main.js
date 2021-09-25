@@ -1,9 +1,9 @@
-let calcAverage = (...numbers) => {
-	let sum = 0;
-	for(let i = 0; i < numbers.length; i++){
-		sum += numbers[i];
+let greet = () => {
+	let displayName = () => {
+		console.log('Jaden');
 	}
-	return sum/numbers.length;
+
+	displayName();
 }
 
-console.log(calcAverage(1, 2, 3, 4, 5, 6));
+greet();
