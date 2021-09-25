@@ -1,25 +1,20 @@
-const myObject = {};
+const car = {
+	age: 20,
+	brand: 'RollsRoyce',
+	speedLimit: 250
+};
 
-myObject['name'] = 'George';
-myObject[3] = 'Hello';
-myObject[false] = 'true';
-
-console.log(myObject['name']);
-console.log(myObject[3]);
-console.log(myObject[false]);
-console.log(myObject);
-
-Object.defineProperty(myObject, 'jordan', {
-	get (){
-		return 6;
+Object.defineProperty(car, Symbol.iterator, {
+	value: function* (){
+		yield 1;
+		yield 2;
+		yield { name: 'boobs' };
 	}
 });
 
-const myOtherObject = {
-	get iAmAFunction(){
-		console.log('Hello, you just called a function lol');
+for(let i of car){
+	console.log(i);
+	if(typeof(i) === 'object'){
+		console.log(i.name);
 	}
-};
-
-console.log(myObject.jordan);
-myOtherObject.iAmAFunction;
+}
