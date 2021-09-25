@@ -1,13 +1,13 @@
+const myArray = [1, 2, 3, 4];
+let arrayIterator = myArray[Symbol.iterator]();
+
 const myObject = {
-	size: 5
-};
-
-console.log(myObject.size);
-
-Object.defineProperty(myObject, 'iterator', {
-	get() {
-		return 'boobs';
+	jump: function(){
+		console.log('Other object is jumping');
 	}
-});
+}
 
-console.log(myObject.iterator);
+myObject.jump();
+myObject['jump']();
+
+console.log(typeof(Symbol.iterator));
