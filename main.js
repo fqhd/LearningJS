@@ -1,13 +1,25 @@
-let factoryFunction = () => {
-	return {
-		age: 30,
-		myFunction: function(){
-			console.log('This is my factory function');
-		}
+const myObject = {};
+
+myObject['name'] = 'George';
+myObject[3] = 'Hello';
+myObject[false] = 'true';
+
+console.log(myObject['name']);
+console.log(myObject[3]);
+console.log(myObject[false]);
+console.log(myObject);
+
+Object.defineProperty(myObject, 'jordan', {
+	get (){
+		return 6;
 	}
-}
+});
 
-let obj = factoryFunction(); // Cannot use new
-let mySymbol = Symbol(); // Cannot use new the same way we can't use new for factoryFunction()
+const myOtherObject = {
+	get iAmAFunction(){
+		console.log('Hello, you just called a function lol');
+	}
+};
 
-obj.myFunction();
+console.log(myObject.jordan);
+myOtherObject.iAmAFunction;
