@@ -4,13 +4,11 @@ const car = {
 	speedLimit: 250
 };
 
-Object.defineProperty(car, Symbol.iterator, {
-	value: function* (){
-		yield 1;
-		yield 2;
-		yield { name: 'boobs' };
-	}
-});
+car[Symbol.iterator] = function* (){
+	yield 1;
+	yield 2;
+	yield 3;
+}
 
 for(let i of car){
 	console.log(i);
