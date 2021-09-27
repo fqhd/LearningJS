@@ -1,20 +1,15 @@
-const myObject = {
-	[Symbol.iterator]: function (){
-		return {
-			count: 0,
-			next: function(){
-				if(this.count==10){
-					var finished = true;
-				}else{
-					var finished = false;
-				}
-				this.count++;
-				return { value: '3', done: finished };
-			}
-		}
-	}
-};
+'use strict';
 
-for(let i of myObject){
-	console.log(i);
+class Person {
+	constructor(name, age){
+		this.name = name;
+		this.age = age;
+	}
 }
+
+let person = new Person('Fahd', 18);
+person.speed = 10;
+
+console.log(person.name);
+console.log(person.age);
+console.log(person.speed);
