@@ -1,16 +1,23 @@
-const ultimateObject = {
-	[Symbol.for('Jordan')]: function() {
-		for(let i in arguments){
-			this[i] = arguments[i];
-		}
-	},
-	[Symbol.iterator]: function* () {
-		for(let i in this){
-			yield this[i];
-		}
+class Animal {
+	constructor(type){
+		this.type = type;
 	}
-};
+}
 
-ultimateObject[Symbol.for('Jordan')](3, 5, 'George', false, true, 2094);
+class Dog extends Animal {
+	constructor(name, type){
+		super(type);
+		this.name = name;
+	}
+	printType(){
+		console.log(this.name + ' is a ' + this.type);
+	}
+}
 
-console.log(...ultimateObject);
+let myDog = new Dog('George', 'Lion');
+
+myDog.printType();
+
+myDog.type = 'Zebra';
+
+myDog.printType();
