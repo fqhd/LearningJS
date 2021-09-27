@@ -1,15 +1,16 @@
-'use strict';
-
-class Person {
-	constructor(name, age){
-		this.name = name;
-		this.age = age;
+const ultimateObject = {
+	[Symbol.for('Jordan')]: function() {
+		for(let i in arguments){
+			this[i] = arguments[i];
+		}
+	},
+	[Symbol.iterator]: function* () {
+		for(let i in this){
+			yield this[i];
+		}
 	}
-}
+};
 
-let person = new Person('Fahd', 18);
-person.speed = 10;
+ultimateObject[Symbol.for('Jordan')](3, 5, 'George', false, true, 2094);
 
-console.log(person.name);
-console.log(person.age);
-console.log(person.speed);
+console.log(...ultimateObject);
