@@ -1,7 +1,24 @@
-let obj = [3, 3, 5, 2, 3, 1];
-
-Array.prototype.sayHello = () => {
-	console.log('Bruva');
+class Animal {
+	sleep(){
+		console.log('Animal is sleeping');
+	}
 }
 
-obj.sayHello();
+function Feline(Animal){
+	return class extends Animal {
+		purr(){
+			console.log('Purring...');
+		}
+	}
+}
+
+class Cat extends Feline(Animal) {
+	meow(){
+		console.log('meow UwU 🐱🌈');
+	}
+}
+
+let myCat = new Cat();
+myCat.meow();
+myCat.purr();
+myCat.sleep();
