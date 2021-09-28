@@ -9,3 +9,16 @@ export default class Car {
 		return this.#milage;
 	}
 }
+
+export let calcMilage = (car) => {
+	switch(car.owner){
+		case 'Fahd':
+			return 500;
+		case 'Tom':
+			return 10_000;
+		case 'Smith':
+			return 200_000;
+		default:
+			return -1;
+	}
+}
