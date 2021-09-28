@@ -1,11 +1,8 @@
-const carObj = {
-	age: 10,
-	milage: 20
-};
+import Car from './car.js';
 
-function myFunc({milage, age}){
-	console.log('Milage: ' + milage);
-	console.log('Age: ' + age);
-}
+let myCar = new Car('Mitsubishi', 200000, 'George');
 
-myFunc(carObj);
+
+console.log('Milage: ' + myCar.milage);
+console.log('Brand: ' + myCar.brand);
+console.log('Owner: ' + myCar.owner);
