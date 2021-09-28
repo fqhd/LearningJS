@@ -1,24 +1,11 @@
-class Animal {
-	sleep(){
-		console.log('Animal is sleeping');
-	}
+const carObj = {
+	age: 10,
+	milage: 20
+};
+
+function myFunc({milage, age}){
+	console.log('Milage: ' + milage);
+	console.log('Age: ' + age);
 }
 
-function Feline(Animal){
-	return class extends Animal {
-		purr(){
-			console.log('Purring...');
-		}
-	}
-}
-
-class Cat extends Feline(Animal) {
-	meow(){
-		console.log('meow UwU 🐱🌈');
-	}
-}
-
-let myCat = new Cat();
-myCat.meow();
-myCat.purr();
-myCat.sleep();
+myFunc(carObj);
