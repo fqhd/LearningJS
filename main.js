@@ -1,9 +1,12 @@
-import Car, { calcMilage } from './car.js';
+const myApple = {
+	age: 45,
+	name: 'Fahd'
+};
 
-let myCar = new Car('Mitsubishi', 100, 'Fahd');
+function myFunction(myObj){
+	const { age, name } = myObj;
+	console.log('Name: ' + name);
+	console.log('Age: ' + age);
+}
 
-
-console.log('Milage: ' + myCar.milage);
-console.log('Brand: ' + myCar.brand);
-console.log('Owner: ' + myCar.owner);
-console.log('Predicted Milage: ' + calcMilage(myCar));
+myFunction(myApple);
