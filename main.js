@@ -3,8 +3,7 @@ const myApple = {
 	name: 'Fahd'
 };
 
-function myFunction(myObj){
-	const { age, name } = myObj;
+function myFunction({name, age}){
 	console.log('Name: ' + name);
 	console.log('Age: ' + age);
 }
