@@ -16,10 +16,6 @@ let getApple = apple => {
 	return apple.age > 30;
 }
 
-let filteredApples = myArray.filter(apple => {
-	return apple.age < 50; 
-});
+let filteredApples = myArray.map(apple => apple.age);
 
-for(let i of filteredApples){
-	console.log(i);
-}
+console.table(filteredApples);
