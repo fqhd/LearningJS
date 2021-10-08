@@ -6,12 +6,12 @@ class Apple {
 }
 
 let myArray = [
-	new Apple('George', 20),
-	new Apple('George', 30),
-	new Apple('George', 60),
-	new Apple('George', 90),
 ];
 
-let validArray = myArray.some(apple => apple.age == 30);
+for(let i = 0; i < 200; i++){
+	myArray.push(new Apple('George', parseInt(Math.random() * 100)));
+}
 
-console.log(validArray);
+let validArray = myArray.sort((a, b) => a.age - b.age);
+
+console.table(validArray);
