@@ -9,12 +9,14 @@ class Apple {
 	}
 }
 
-let myName = 'George';
+let myName = {name: 'George'}; // Name is now an object
 let myApple = new Apple(myName, 12);
-console.log(myApple.name); // Prints George
+console.log(myApple.name.name); // Prints George
 
-myName = 'Fahd'; // Changing my name variable
+myName.name = 'Fahd'; // Changing the name variable inside the myName object
 
-console.log(myApple.name); // Still prints George
+console.log(myApple.name); // Prints Fahd now because we have changed the name variable under the object
 
-// It doesn't change because only objects can be passed by reference
+// Since we are passing in an object to myApple now, the value of name can be controlled outside of the
+// Apple scope because it is being passed by reference since it is an object and objects are always
+// passed by reference.
