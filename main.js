@@ -1,17 +1,18 @@
-class Apple {
+class Citizen {
 	constructor(name, age){ // Constructor(called only when using new)
-		this.age = age; // Private variable
+		this.age = age; // Not a private variable (facepalm)
 		this.name = name;
 	}
 }
 
-let myArray = [
+let citizens = [
+	new Citizen('Frederich', 32),
+	new Citizen('George', 52),
+	new Citizen('Joshua', 12),
 ];
 
-for(let i = 0; i < 200; i++){
-	myArray.push(new Apple('George', parseInt(Math.random() * 100)));
-}
+let totalAges = citizens.reduce((accumulator, currentObject) => {
+	return accumulator + currentObject.age;
+}, 0	);
 
-let validArray = myArray.sort((a, b) => a.age - b.age);
-
-console.table(validArray);
+console.log(totalAges);
