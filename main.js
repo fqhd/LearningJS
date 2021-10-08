@@ -12,10 +12,6 @@ let myArray = [
 	new Apple('George', 90),
 ];
 
-let getApple = apple => {
-	return apple.age > 30;
-}
+let validArray = myArray.some(apple => apple.age == 30);
 
-let filteredApples = myArray.map(apple => apple.age);
-
-console.table(filteredApples);
+console.log(validArray);
