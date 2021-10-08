@@ -11,8 +11,6 @@ let citizens = [
 	new Citizen('Joshua', 12),
 ];
 
-let totalAges = citizens.reduce((accumulator, currentObject) => {
-	return accumulator + currentObject.age;
-}, 0	);
+citizens.map(citizen => citizen.age = 20);
 
-console.log(totalAges);
+console.table(citizens);
